@@ -16,8 +16,6 @@ var jwtData = {
   iss: 'mycompany.com',
   aud: 'mycompany.net'
 };
-console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> expiration is: ', expiration);
-console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> expiration env is: ', process.env.JWT_EXPIRATION);
 if (process.env.JWT_CLIENT && process.env.JWT_CLIENT.length > 0) {
   try {
     var tempConfig = JSON.parse(process.env.JWT_CLIENT);
