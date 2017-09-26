@@ -16,7 +16,7 @@ if (process.env.JWT_CLIENT && process.env.JWT_CLIENT.length > 0) {
     var tempConfig = JSON.parse(process.env.JWT_CLIENT);
     jwtData = tempConfig && typeof tempConfig === 'object' ? tempConfig : jwtData;
   } catch (e) {
-    log.error(logger.defaultContext(), 'Could not parse JWT_CLIENT as json, service authentication will fail, error: ', e);
+    log.error(log.defaultContext(), 'Could not parse JWT_CLIENT as json, service authentication will fail, error: ', e);
   }
 }
 
@@ -29,7 +29,7 @@ module.exports = function generateJwt(payload, app, cb) {
     var key = process.env.SECRET_OR_PUBLIC_KEY && process.env.SECRET_OR_PUBLIC_KEY.length > 0 ? process.env.SECRET_OR_PUBLIC_KEY : 'secret';
     jwt.sign(jwtData, key, {expiresIn: expiration}, function jwtSignCb(err, token) {
       if (err) {
-        log.error(logger.defaultContext(), 'error in siging jwt: ', err);
+        log.error(log.defaultContext(), 'error in siging jwt: ', err);
         return cb(err);
       }
       if (expiration) {
