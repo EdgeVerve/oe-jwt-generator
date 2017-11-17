@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "jsonwebtoken": "^8.0.1",
-    "oe-logger": "^0.9.1"
+    "oe-logger": "^1.0.0"
   }
 }
